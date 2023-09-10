@@ -37,9 +37,3 @@ Here's how the contract calculates the amount to be received (`valueOut`) based 
 2. **`Vice Versa for` Swap from `tokenA` to `tokenB` (valueOut calculation)**
 
 These formulas ensure that the product of reserve balances (`x * y`) remains constant before and after the swap, while `valueOut` represents the amount of the other token that the user will receive based on the provided input amount, thus maintaining liquidity in the pool.
-
-## License
-
-This Smart Contract is provided under the SPDX-License-Identifier: SEE LICENSE IN LICENSE. Please refer to the specific license file for details.
-
-**Note:** Make sure to include detailed instructions and precautions for deploying and interacting with the contract when sharing this Readme with users or developers.
