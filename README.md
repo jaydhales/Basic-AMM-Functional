@@ -31,14 +31,19 @@ Here's how the contract calculates the amount to be received (`valueOut`) based 
 1. **Swap from `tokenA` to `tokenB` (valueOut calculation):**
 
    ```
-   valueOut = k / (_reserveA + _amountIn) - _reserveB
+   valueOut = _reserveB - k / (_reserveA + _amountIn)
+   ```
+
+   
+
+2. **Swap from `tokenA` to `tokenB` (valueOut calculation)**
+   ```
+   valueOut =  _reserveA - (k / (_reserveB + _amountIn))
    ```
 
    - `_reserveA`: Current reserve balance of `tokenA`.
    - `_amountIn`: Amount of `tokenA` provided by the user for the swap.
    - `_reserveB`: Current reserve balance of `tokenB`.
    - `k`: Constant product of the reserve balances.
-
-2. **`Vice Versa for` Swap from `tokenA` to `tokenB` (valueOut calculation)**
 
 These formulas ensure that the product of reserve balances (`x * y`) remains constant before and after the swap, while `valueOut` represents the amount of the other token that the user will receive based on the provided input amount, thus maintaining liquidity in the pool.
